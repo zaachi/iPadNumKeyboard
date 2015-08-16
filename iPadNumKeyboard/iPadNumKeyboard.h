@@ -13,4 +13,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *numberButton;
 
 -(IBAction)numberButtonClick:(id)sender;
+-(IBAction)hideKeyboard:(id)sender;
+
+-(IBAction)successButtonClick:(id)sender;
 @end

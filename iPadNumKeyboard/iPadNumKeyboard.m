@@ -46,11 +46,37 @@
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editTextChange:) name:UITextViewTextDidChangeNotification object:nil];
 }
 
--(IBAction)numberButtonClick:(id)sender{
+-(void)numberClickAction: (long) val{
     if (self.targetTextInput) {
-        UITextField *temp = (UITextField *)targetTextInput;
-        temp.text = [temp.text stringByAppendingString:[NSString stringWithFormat:@"%ld", (long)[sender tag]]];
+        if ([self.targetTextInput isKindOfClass:[UITextField class]]) {
+            UITextField *temp = (UITextField *)self.targetTextInput;
+            temp.text = [temp.text stringByAppendingString:[NSString stringWithFormat:@"%ld", val]];
+        }else if ([self.targetTextInput isKindOfClass:[UITextView class]]) {
+            UITextView *temp = (UITextView *)self.targetTextInput;
+            temp.text = [temp.text stringByAppendingString:[NSString stringWithFormat:@"%ld", val]];
+        }
     }
+}
+
+-(void)hideKeyboardAction{
+    [self.targetTextInput resignFirstResponder];
+}
+
+-(IBAction)hideKeyboard:(id)sender{
+    [self hideKeyboardAction];
+}
+
+-(IBAction)numberButtonClick:(id)sender{
+    int tag = [sender tag];
+    if (tag < 10) {
+        [self numberClickAction:tag];
+    }
+}
+
+-(IBAction)successButtonClick:(id)sender{
+    //first hide keyboard
+    [self hideKeyboardAction];
+    
 }
 
 - (void)editingDidEnd:(NSNotification *)notification {
