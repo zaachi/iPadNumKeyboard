@@ -7,19 +7,28 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="iPadNumKeyboard" id="iN0-l3-epB" customClass="iPadNumKeyboard">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="255"/>
+            <rect key="frame" x="0.0" y="0.0" width="768" height="355"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDi-zr-kFq">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="355"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7A-fD-lgg">
-                            <rect key="frame" x="0.0" y="134" width="264" height="65"/>
+                            <rect key="frame" x="0.0" y="131" width="264" height="65"/>
                             <state key="normal" image="btn0">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="numberButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="sYG-St-W4j"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWA-xr-wgo">
+                            <rect key="frame" x="679" y="134" width="89" height="65"/>
+                            <state key="normal" image="btn0">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="hideKeyboard:" destination="iN0-l3-epB" eventType="touchUpInside" id="EVH-7X-Swx"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLN-U1-xua">
@@ -76,13 +85,26 @@
                                 <action selector="numberButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="bg7-NH-m6M"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWA-xr-wgo">
-                            <rect key="frame" x="679" y="134" width="89" height="65"/>
-                            <state key="normal" image="btn0">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CY-d3-QSl">
+                            <rect key="frame" x="364" y="208" width="385" height="45"/>
+                            <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Success">
+                                <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="hideKeyboard:" destination="iN0-l3-epB" eventType="touchUpInside" id="EVH-7X-Swx"/>
+                                <action selector="successButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="btJ-c2-wYb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wha-oZ-R0H">
+                            <rect key="frame" x="19" y="207" width="347" height="48"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <state key="normal" title="cancel">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="k3v-Wt-w2f"/>
                             </connections>
                         </button>
                     </subviews>
@@ -93,9 +115,11 @@
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="cancelButton" destination="wha-oZ-R0H" id="qLF-tw-FtK"/>
                 <outlet property="numberButton" destination="BLN-U1-xua" id="iQm-UQ-4PC"/>
+                <outlet property="successButton" destination="0CY-d3-QSl" id="ehl-6O-pP9"/>
             </connections>
-            <point key="canvasLocation" x="410" y="399.5"/>
+            <point key="canvasLocation" x="549" y="395.5"/>
         </view>
     </objects>
     <resources>

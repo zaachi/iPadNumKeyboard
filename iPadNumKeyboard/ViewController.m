@@ -28,11 +28,38 @@
 
     iPadNumKeyboard *keyboard = [iPadNumKeyboard new];
 
+    //set button title
+    [keyboard setSuccessTitle:@"Pokracovat"];
+    [keyboard setCancelTitle:@"Ukoncit"];
+    [keyboard hideCancelButton];
+    
+    [keyboard.successButton addTarget:self action:@selector(successClick:) forControlEvents:UIControlEventTouchUpInside];
+    [keyboard.cancelButton addTarget:self action:@selector(cancelClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+
     inputTextField.inputView = keyboard;
     inputTextView.inputView = keyboard;
     
     //show keyboard
     [inputTextField becomeFirstResponder];
+}
+
+-(IBAction)successClick:(id)sender{
+    NSLog(@"confirmed");
+    NSLog(@"inputTextField value is: %@", inputTextField.text);
+    NSLog(@"inputTextView value is: %@", inputTextView.text);
+
+    if ([inputTextView.text isEqualToString:@""]) {
+        [inputTextView becomeFirstResponder];
+    }
+    else if ([inputTextField.text isEqualToString:@""]) {
+        [inputTextField becomeFirstResponder];
+    }
+
+}
+
+-(IBAction)cancelClick:(id)sender{
+    NSLog(@"cancel");
 }
 
 - (void)didReceiveMemoryWarning {

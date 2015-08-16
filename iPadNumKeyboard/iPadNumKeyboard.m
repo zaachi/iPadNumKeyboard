@@ -18,6 +18,8 @@
 
 @synthesize numberButton;
 @synthesize targetTextInput;
+@synthesize successButton;
+@synthesize cancelButton;
 
 -(id)init{
     static iPadNumKeyboard *keyboard = nil;
@@ -73,14 +75,39 @@
     }
 }
 
+-(void)setSuccessTitle:(NSString *)title{
+    [successButton setTitle:title forState:UIControlStateNormal];
+}
+
+-(void)setCancelTitle :(NSString *)title{
+    [cancelButton setTitle:title forState:UIControlStateNormal];
+}
+
+
+-(IBAction)cancelButtonClick:(id)sender{
+    //first hide keyboard
+    [self hideKeyboardAction];
+}
+
 -(IBAction)successButtonClick:(id)sender{
     //first hide keyboard
     [self hideKeyboardAction];
-    
 }
 
 - (void)editingDidEnd:(NSNotification *)notification {
     self.targetTextInput = nil;
+}
+
+-(void)hideCancelButton{
+    self.cancelButton.hidden = YES;
+    CGRect frame = self.successButton.frame;
+    frame.origin.x = 0;
+    frame.size.width = 100;
+    self.successButton.frame = CGRectMake(0, 0, 100, 100);
+}
+
+-(void)hideSuccessButton{
+    self.successButton.hidden = YES;
 }
 
 - (void)editingDidBegin:(NSNotification *)notification {
