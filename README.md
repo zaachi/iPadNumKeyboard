@@ -2,7 +2,7 @@
 
 iPadNumKeyboard is numeric keyboard for iPad, whitch works with UITextField or UITextView. 
 
-![alt tag](https://github.com/zaachi/iPadNumKeyboard/blob/master/readmeImages/ipadkey.gif?raw=true)
+![alt tag](https://github.com/zaachi/iPadNumKeyboard/blob/master/readmeImages/ipadkey.png?raw=true)
  
 # Usage
 
@@ -41,7 +41,7 @@ Add custom targets:
     [keyboard.successButton addTarget:self action:@selector(successClick:) forControlEvents:UIControlEventTouchUpInside];
     [keyboard.cancelButton addTarget:self action:@selector(cancelClick:) forControlEvents:UIControlEventTouchUpInside];
 
-![alt tag](https://github.com/zaachi/iPadNumKeyboard/blob/master/readmeImages/ipadkey.png?raw=true)
+![alt tag](https://github.com/zaachi/iPadNumKeyboard/blob/master/readmeImages/ipadkey.gif?raw=true)
 
 # Design
 
