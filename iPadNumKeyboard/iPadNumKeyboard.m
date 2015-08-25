@@ -60,6 +60,22 @@
     }
 }
 
+-(IBAction)removeButtonClick:(id)sender{
+    if (self.targetTextInput) {
+        if ([self.targetTextInput isKindOfClass:[UITextField class]]) {
+            UITextField *temp = (UITextField *)self.targetTextInput;
+            if ([temp.text length]) {
+                temp.text = [temp.text substringToIndex:[temp.text length]-1];
+            }
+        }else if ([self.targetTextInput isKindOfClass:[UITextView class]]) {
+            UITextView *temp = (UITextView *)self.targetTextInput;
+            if ([temp.text length]) {
+                temp.text = [temp.text substringToIndex:[temp.text length]-1];
+            }
+        }
+    }
+}
+
 -(void)hideKeyboardAction{
     [self.targetTextInput resignFirstResponder];
 }
@@ -100,10 +116,7 @@
 
 -(void)hideCancelButton{
     self.cancelButton.hidden = YES;
-    CGRect frame = self.successButton.frame;
-    frame.origin.x = 0;
-    frame.size.width = 100;
-    self.successButton.frame = CGRectMake(0, 0, 100, 100);
+    self.successButton.frame = CGRectMake(cancelButton.frame.origin.x, cancelButton.frame.origin.y, cancelButton.frame.size.width+successButton.frame.size.width, successButton.frame.size.height);
 }
 
 -(void)hideSuccessButton{

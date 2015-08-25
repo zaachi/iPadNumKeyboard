@@ -26,17 +26,21 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
 
+    //create keyboard
     iPadNumKeyboard *keyboard = [iPadNumKeyboard new];
 
     //set button title
-    [keyboard setSuccessTitle:@"Pokracovat"];
-    [keyboard setCancelTitle:@"Ukoncit"];
-    [keyboard hideCancelButton];
-    
+    [keyboard setSuccessTitle:@"Next"];
+    [keyboard setCancelTitle:@"Cancel"];
+
+    //hide button
+    //[keyboard hideCancelButton];
+
+    //add targets
     [keyboard.successButton addTarget:self action:@selector(successClick:) forControlEvents:UIControlEventTouchUpInside];
     [keyboard.cancelButton addTarget:self action:@selector(cancelClick:) forControlEvents:UIControlEventTouchUpInside];
-    
 
+    //set input view into text fields
     inputTextField.inputView = keyboard;
     inputTextView.inputView = keyboard;
     
@@ -44,6 +48,7 @@
     [inputTextField becomeFirstResponder];
 }
 
+//success action
 -(IBAction)successClick:(id)sender{
     NSLog(@"confirmed");
     NSLog(@"inputTextField value is: %@", inputTextField.text);
@@ -55,9 +60,9 @@
     else if ([inputTextField.text isEqualToString:@""]) {
         [inputTextField becomeFirstResponder];
     }
-
 }
 
+//cancel action
 -(IBAction)cancelClick:(id)sender{
     NSLog(@"cancel");
 }

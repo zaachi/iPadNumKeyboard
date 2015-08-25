@@ -15,6 +15,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *cancelButton;
 
 -(IBAction)numberButtonClick:(id)sender;
+-(IBAction)removeButtonClick:(id)sender;
 -(IBAction)hideKeyboard:(id)sender;
 
 -(IBAction)successButtonClick:(id)sender;
@@ -25,6 +26,5 @@
 
 -(void)hideCancelButton;
 -(void)hideSuccessButton;
-
 
 @end

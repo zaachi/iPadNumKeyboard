@@ -17,25 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-z1-3b7">
-                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="enter number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-z1-3b7">
+                                <rect key="frame" x="16" y="28" width="568" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="BMU-fS-CMZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="p4Z-xO-znt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EsP-U2-Gl6">
-                                <rect key="frame" x="16" y="80" width="568" height="128"/>
-                                <color key="backgroundColor" red="0.96358449840000004" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EsP-U2-Gl6">
+                                <rect key="frame" x="16" y="111" width="568" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1YO-mh-SRy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EsP-U2-Gl6" firstAttribute="top" secondItem="Oea-z1-3b7" secondAttribute="bottom" constant="33" id="3rr-HQ-3qP"/>
+                            <constraint firstItem="EsP-U2-Gl6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="9hq-i7-IgE"/>
                             <constraint firstItem="Oea-z1-3b7" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="CaW-QS-UgG"/>
                             <constraint firstItem="Oea-z1-3b7" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="TGf-ox-37t"/>
+                            <constraint firstItem="EsP-U2-Gl6" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="dz6-3n-ydM"/>
                             <constraint firstItem="Oea-z1-3b7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="xgn-Wv-Hf2"/>
                         </constraints>
                     </view>
